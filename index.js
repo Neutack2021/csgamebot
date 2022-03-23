@@ -2,7 +2,6 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 client.db = require("quick.db");
 client.request = new (require("rss-parser"))();
-client.config = require("./config.js");
 const randomPuppy = require('random-puppy');
 const express = require('express');
 const server = express();
@@ -89,4 +88,4 @@ client.on("message", async message => {
 
 keepAlive();
 
-client.login(client.config.token);
+client.login(process.env.BOT_TOKEN);
